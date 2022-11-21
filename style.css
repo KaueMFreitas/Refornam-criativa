@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+@keyframes barra-arco-iris {
+    0% { border-color: red; }
+    25% { border-color: blue; } 
+    75% { border-color: violet; }
+    100% { border-color: red; }
+}
+@keyframes cor-arco-iris {
+    0% { color: red; }
+    25% { color: blue; } 
+    75% { color: violet; }
+    100% { color: red; }
+}
+
+:root {
+
+    --contorno: 1px 0 black, 0 1px black, -1px 0 black, 0 -1px black;
+    
+    --background-page:  #3a3a3a;
+    --background-nav: #4d4d4d;
+    --background-header-um: url("IMGS/fundo1.jpg");
+    
+    --card-background-sobre: orange;
+
+    --color-text-nav: white;
+    --color-text-sobre: white;
+
+    --title-color: white;
+    --text-color: #000000;
+
+}   
+
+
+/*Animações na tela*/
+[data-anime] {
+    opacity: 0;
+    transition: .6s;
+}
+
+[data-anime="esquerda"] {
+    transform: translate3d(-50px, 0px, 0px);
+}
+[data-anime="direita"] {
+    transform: translate3d(50px, 0px, 0px);
+}
+[data-anime="baixo"] {
+    transform: translate3d(0px, -50px, 0px);
+}
+[data-anime="cima"] {
+    transform: translate3d(0px, 50px, 0px);
+}
+
+[data-anime].animacaoOn {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+html {
+    font-size: 16px;
+}
+body {
+    background-color: var(--background-page);
+
+    padding: 0;
+    margin: 0;
+}
+main {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.text-padrao{
+    color: var(--text-color);
+    text-align: center;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+.title-padrao {
+    color: var(--title-color);
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: var(--contorno);
+
+    font-weight: bold;
+
+    margin: 0;
+}
+
+/* Div da Navegação */
+nav {       
+    display: block;
+
+    width: 100%;
+
+    background-color: var(--background-nav);
+    border-bottom: 3px solid;
+    box-shadow: 0px 3px 10px black;
+
+    animation: 5s barra-arco-iris infinite;
+
+    position: fixed;
+    top: 0;
+
+    overflow: hidden;
+
+    z-index: 1000;
+}
+#nav-content {
+    display: flex;
+
+    justify-content: space-evenly;
+}
+
+/* Aréa de conteudos da Navegação */
+nav #Nav-logo{
+    width: 30%;
+    padding: .6rem 0;
+}
+#BtnMenujs {
+    color: white;
+    text-shadow: var(--contorno);
+    font-size: 1.2rem;
+
+    padding: 1rem;
+    margin: 0;
+
+    background: none;
+    border: none;
+}
+
+/* Menu na navegação*/
+nav #nav-menu{
+    display: block;
+
+    overflow-x: hidden;
+    visibility: hidden;
+
+    height: 0;
+
+    margin: 0px;
+    padding: 0px;
+
+    transition: 1s;
+
+    border-top: 1px solid black;
+}
+#nav-menu .btn-nav {
+    list-style: none;
+
+    margin: 0;
+    
+    border-bottom: 1px solid black;
+}
+#nav-menu .btn-nav a {
+    display: block;
+
+    color: var(--color-text-nav);
+    text-decoration: none;
+    
+    padding: 1rem 0;
+    margin-left: .3rem;
+
+    text-shadow: var(--contorno);
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+#nav-menu .btn-nav:nth-last-child(1) a {
+    border-bottom: none;
+}
+.active #nav-menu{
+    visibility: visible;
+    height: 35vh;
+}
+
+
+/* Primeiro header da pagina */
+#header-um {
+    padding-top: 5rem;
+    width: 100vw;
+    height: 30.9rem;
+
+
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: var(--background-header-um);
+
+    border-bottom: 1px solid black;
+    box-shadow: inset 0px -10px 25px black;
+
+    position: relative;
+}
+
+/* texto do header */
+#header-um h1{ 
+    animation: 5s cor-arco-iris infinite;
+    
+    font-size: 2rem;
+
+    text-shadow: var(--contorno);
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    right: 5px;
+    top: 35%;
+}
+#header-um h1 spam {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: .6rem;
+}
+
+/* IMG no header*/
+#header-um #img-pessoas {
+    width: 90%;
+
+    position: absolute;
+    bottom: 0px;
+    left: -75px;
+}
+
+/* Sobre */
+#Sobre {
+    background-color: var(--card-background-sobre);
+    
+    box-shadow: 2px 5px 5px #00000081;
+    border: 1px solid #00000081;
+    
+    padding: 1rem 0;
+    margin: 1rem 0;
+
+}
+#Sobre-text {
+    width: 90%;
+
+    margin: 0 auto;
+}
+#Sobre #Conheça-btn{
+    background-color: blue;
+    
+    margin: .5rem 0;
+    padding: 1rem 1.3rem;
+
+    border: 1px solid black;
+    border-radius: 25px;
+
+    outline: none;
+
+    color: white;
+    text-shadow: var(--contorno);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+#Sobre #Conheça-btn:active{
+    border: 2px solid red;
+    margin: .95rem 0;
+}
