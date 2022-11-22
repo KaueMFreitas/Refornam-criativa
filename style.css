@@ -31,6 +31,9 @@
 
 }   
 
+* {
+    overflow-x: hidden;
+}
 
 /*Animações na tela*/
 [data-anime] {
@@ -65,10 +68,74 @@ body {
     padding: 0;
     margin: 0;
 }
+
+/* Padrões */
 main {
     width: 95%;
     margin: 0 auto;
 }
+.valor {
+    color: rgb(70, 70, 70);
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.valor::before {
+    content: "R$";
+}
+
+
+/* Cards */
+.card {
+    width: 85%;
+    margin: 0 auto 2rem;
+
+    background-color: rgb(148, 148, 148);
+
+    border: 1px solid black;
+    box-shadow: 2px 17px 25px 5px #00000070;
+
+    text-align: center;
+}
+.card-img {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.card-list {
+    padding: 0;
+    margin: 2rem 0;
+}
+.card-list li {
+    border-bottom: 1px solid black;
+
+    padding: 1rem 0;
+
+    color: var(--text-card-color);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+.card-list li:nth-last-child(1) {
+    border: none;
+}
+.card-btn {
+    background-color: rgb(255, 166, 0);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.card-btn:active {
+    box-shadow: inset 0px 1px 10px rgba(0, 0, 0, 0.651);
+}
+.card-btn a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: white;
+}
+
+
 
 .text-padrao{
     color: var(--text-color);
@@ -89,14 +156,19 @@ main {
     margin: 0;
 }
 
+
+
 /* Div da Navegação */
 nav {       
     display: block;
 
     width: 100%;
+    
+    margin: 0px;
+    padding: 0px;
 
     background-color: var(--background-nav);
-    border-bottom: 3px solid;
+    border-bottom: 2px solid;
     box-shadow: 0px 3px 10px black;
 
     animation: 5s barra-arco-iris infinite;
@@ -116,16 +188,17 @@ nav {
 
 /* Aréa de conteudos da Navegação */
 nav #Nav-logo{
-    width: 30%;
-    padding: .6rem 0;
+    width: 8rem;
+    padding: .4rem 0;
 }
 #BtnMenujs {
     color: white;
     text-shadow: var(--contorno);
     font-size: 1.2rem;
 
-    padding: 1rem;
+    padding: 1rem 0;
     margin: 0;
+    padding: 0;
 
     background: none;
     border: none;
@@ -172,14 +245,14 @@ nav #nav-menu{
 }
 .active #nav-menu{
     visibility: visible;
-    height: 35vh;
+    height: 27vh;
 }
 
 
 /* Primeiro header da pagina */
 #header-um {
     padding-top: 5rem;
-    width: 100vw;
+    width: 100%;
     height: 30.9rem;
 
 
@@ -199,7 +272,7 @@ nav #nav-menu{
 #header-um h1{ 
     animation: 5s cor-arco-iris infinite;
     
-    font-size: 2rem;
+    font-size: 1.6em;
 
     text-shadow: var(--contorno);
     text-align: center;
@@ -212,14 +285,14 @@ nav #nav-menu{
     top: 35%;
 }
 #header-um h1 spam {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: .6rem;
 }
 
 /* IMG no header*/
 #header-um #img-pessoas {
-    width: 90%;
+    width: 90vw;
 
     position: absolute;
     bottom: 0px;
@@ -231,11 +304,12 @@ nav #nav-menu{
     background-color: var(--card-background-sobre);
     
     box-shadow: 2px 5px 5px #00000081;
-    border: 1px solid #00000081;
+    border: 1px solid #000000;
     
-    padding: 1rem 0;
-    margin: 1rem 0;
+    padding: 2rem 0;
+    margin: 2rem 0;
 
+    overflow-y: hidden;
 }
 #Sobre-text {
     width: 90%;
@@ -261,4 +335,17 @@ nav #nav-menu{
 #Sobre #Conheça-btn:active{
     border: 2px solid red;
     margin: .95rem 0;
+}
+
+/* Planos */
+#planos {
+    padding-bottom: 3rem;
+}
+#planos h1 {
+    text-align: center;
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: var(--contorno);
 }
